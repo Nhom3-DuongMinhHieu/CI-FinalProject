@@ -1,0 +1,83 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  font-weight: bold;
+  z-index: 5;
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: 50px;
+    }
+    .navbar__logo-text {
+      margin-left: 8px;
+      font-size: 24px;
+      font-weight: 800;
+      text-shadow: 0px 1px 10px rgb(97, 218, 251, 0.5);
+    }
+  }
+
+  .navbar__between {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    .navbar__between-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      height: 100%;
+      .navbar__between-item {
+        font-weight: 700;
+        position: relative;
+        transition: border 2s;
+        text-shadow: 0px 1px 10px rgb(97, 218, 251, 0.5);
+        margin: 0 18px;
+        &:hover {
+          color: rgba(24, 144, 255, 0.7);
+        }
+        &::after {
+          content: '';
+          bottom: -2px;
+          position: absolute;
+          background-color: rgba(24, 144, 255, 0.7);
+          left: 50%;
+          right: 50%;
+          top: 30px;
+          height: 2px;
+          transition: right ease-out 0.3s, left ease-out 0.3s;
+          -moz-transition: right ease-out 0.3s, left ease-out 0.3s; /* Firefox 4 */
+          -webkit-transition: right ease-out 0.3s, left ease-out 0.3s; /* Safari and Chrome */
+          -o-transition: right ease-out 0.3s, left ease-out 0.3s; /* Opera */
+          -ms-transition: right ease-out 0.3s, left ease-out 0.3s; /*Explorer 10*/
+        }
+        &:hover::after {
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  .navbar__right {
+    .navbar__right-host {
+      padding: 8px;
+      border: 2px solid #1890ff;
+      margin-right: 8px;
+    }
+    .navbar__right-login {
+      padding: 8px 12px;
+      background-color: #1890ff;
+      color: #fff;
+      border: 2px solid #1890ff;
+    }
+  }
+}

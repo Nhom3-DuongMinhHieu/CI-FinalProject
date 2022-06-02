@@ -1,0 +1,33 @@
+.header__search {
+  display: flex;
+  max-width: 1000px;
+  margin: 10vh auto;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  height: 60px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.4);
+  padding: 0 30px 0 16px;
+}
+
+.header__search-option {
+  font-size: 16px !important;
+  line-height: 40px !important;
+}
+
+.header__search-person-count {
+  position: relative;
+  p {
+    margin: 0 8px;
+  }
+  .person-count__title {
+    display: flex;
+    align-items: space-between;
+  }
+}
+
+.vertical-line {
+  border-left: 1.4px solid rgb(191, 191, 191);
+  height: 36px;
+}
