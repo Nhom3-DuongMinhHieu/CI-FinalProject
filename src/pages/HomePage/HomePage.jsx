@@ -18,6 +18,7 @@ const HomePage = () => {
               <img
                 src='https://beebeetravel.vn/assets/images/service/s1.png'
                 className='intro-item-icon'
+                alt='intro-icon-1'
               />
               <div className='intro-item-text'>
                 <h3>Chuyên Tour Đảo</h3>
@@ -32,6 +33,7 @@ const HomePage = () => {
               <img
                 src='https://beebeetravel.vn/assets/images/service/s2.png'
                 className='intro-item-icon'
+                alt='intro-icon-2'
               />
               <div className='intro-item-text'>
                 <h3>Khách Sạn Giá Rẻ</h3>
@@ -43,6 +45,7 @@ const HomePage = () => {
               <img
                 src='https://beebeetravel.vn/assets/images/service/s3.png'
                 className='intro-item-icon'
+                alt='intro-icon-3'
               />
               <div className='intro-item-text'>
                 <h3>Xuất Vé Nhanh Chóng 24/7</h3>
