@@ -1,0 +1,39 @@
+form#atn-form {
+  font-size: 16px;
+}
+
+.ant-drawer-title {
+  font-size: 24px !important;
+  line-height: 24px !important;
+}
+
+input.ant-input {
+  font-size: 16px;
+}
+
+.login-form {
+  max-width: 100%;
+  span {
+    font-size: 16px;
+  }
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+  span {
+    line-height: 24px;
+  }
+}
+
+.ant-btn {
+  height: auto;
+  font-weight: 700 !important;
+}
