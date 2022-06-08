@@ -1,10 +1,12 @@
-import { Col, Input, Row, Select, Form } from 'antd';
-import { Option } from 'antd/lib/mentions';
+import { Col, Form, Input, Row, Select } from 'antd';
 import React from 'react';
 
-const BasicInfo = () => {
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
+const BasicInfo = ({ hotelInfo, setHotelInfo }) => {
+  const handleChange = (e) => {
+    setHotelInfo({
+      ...hotelInfo,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const onFinish = (values) => {
@@ -31,7 +33,6 @@ const BasicInfo = () => {
                 style={{
                   width: '600px',
                 }}
-                name='hotel-name'
                 rules={[
                   {
                     required: true,
@@ -39,24 +40,32 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input size='large' placeholder='Nhập tên khách sạn' />
+                <Input
+                  name='name'
+                  value={hotelInfo.name}
+                  onChange={handleChange}
+                  size='large'
+                  placeholder='Nhập tên khách sạn'
+                />
               </Form.Item>
 
-              <Form.Item name='rate' label='Xếp hạng sao'>
+              <Form.Item label='Xếp hạng sao'>
                 <Select
                   defaultValue='0'
                   style={{
                     width: '300px',
                   }}
                   size='large'
-                  onChange={handleChange}
+                  onChange={(e) => setHotelInfo({ ...hotelInfo, star: e })}
+                  name='star'
+                  value={hotelInfo.star}
                 >
-                  <Option value='0'>Không áp dụng</Option>
-                  <Option value='1'>1 sao</Option>
-                  <Option value='2'>2 sao</Option>
-                  <Option value='3'>3 sao</Option>
-                  <Option value='4'>4 sao</Option>
-                  <Option value='5'>5 sao</Option>
+                  <Select.Option value=''>Không áp dụng</Select.Option>
+                  <Select.Option value='1'>1 sao</Select.Option>
+                  <Select.Option value='2'>2 sao</Select.Option>
+                  <Select.Option value='3'>3 sao</Select.Option>
+                  <Select.Option value='4'>4 sao</Select.Option>
+                  <Select.Option value='5'>5 sao</Select.Option>
                 </Select>
               </Form.Item>
 
@@ -65,7 +74,6 @@ const BasicInfo = () => {
                 style={{
                   width: '600px',
                 }}
-                name='hotel-description'
                 rules={[
                   {
                     required: true,
@@ -73,7 +81,13 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input size='large' placeholder='Nhập mô tả khách sạn' />
+                <Input
+                  name='description'
+                  value={hotelInfo.description}
+                  onChange={handleChange}
+                  size='large'
+                  placeholder='Nhập mô tả khách sạn'
+                />
               </Form.Item>
             </Form>
           </div>
@@ -89,7 +103,6 @@ const BasicInfo = () => {
             >
               <Form.Item
                 label='Tên người liên hệ'
-                name='username'
                 style={{
                   width: '600px',
                 }}
@@ -100,12 +113,16 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input size='large' />
+                <Input
+                  name='host'
+                  value={hotelInfo.host}
+                  onChange={handleChange}
+                  size='large'
+                />
               </Form.Item>
 
               <Form.Item
                 label='Số điện thoại liên lạc (để chúng tôi có thể hỗ trợ đăng ký của Quý vị khi cần)'
-                name='phone-number'
                 style={{
                   width: '600px',
                 }}
@@ -116,7 +133,12 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input size='large' />
+                <Input
+                  name='phone'
+                  value={hotelInfo.phone}
+                  onChange={handleChange}
+                  size='large'
+                />
               </Form.Item>
             </Form>
           </div>
@@ -132,7 +154,6 @@ const BasicInfo = () => {
             >
               <Form.Item
                 label='Địa chỉ phố'
-                name='address1'
                 style={{
                   width: '600px',
                 }}
@@ -143,12 +164,16 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input size='large' />
+                <Input
+                  name='street'
+                  value={hotelInfo.street}
+                  onChange={handleChange}
+                  size='large'
+                />
               </Form.Item>
 
               <Form.Item
                 label='Địa chỉ dòng 2'
-                name='address2'
                 style={{
                   width: '600px',
                 }}
@@ -159,13 +184,16 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input size='large' />
+                <Input
+                  name='homeNumber'
+                  value={hotelInfo.homeNumber}
+                  onChange={handleChange}
+                  size='large'
+                />
               </Form.Item>
 
               <Form.Item
                 label='Thành phố'
-                name='city'
-                initialValue='Thành phố Phú Quốc'
                 style={{
                   width: '600px',
                 }}
@@ -176,7 +204,7 @@ const BasicInfo = () => {
                   },
                 ]}
               >
-                <Input disabled={true} size='large' />
+                <Input value={hotelInfo.city} disabled={true} size='large' />
               </Form.Item>
             </Form>
           </div>

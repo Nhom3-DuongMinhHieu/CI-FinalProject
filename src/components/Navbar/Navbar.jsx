@@ -1,11 +1,16 @@
-import { Button } from 'antd';
-import React, { useEffect } from 'react';
+import { Avatar, Button } from 'antd';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
+import { AuthContext } from '../../contexts/AuthContext';
 import logo from '../../img/logo/logo-black.png';
 import './Navbar.scss';
 
 const Navbar = () => {
+  const {
+    authState: { isAuthenticated, user },
+  } = useContext(AuthContext);
+
   useEffect(() => {
     let navbar = document.querySelector('.navbar');
     window.onscroll = function () {
@@ -62,19 +67,24 @@ const Navbar = () => {
           <Link to='/create-hotel' className='navbar__right-host'>
             Cho thuê phòng
           </Link>
-          <Link to='/login'>
-            <Button
-              type='primary'
-              style={{
-                fontSize: '16px',
-                height: 'auto',
-                padding: '8px 12px',
-                fontWeight: 700,
-              }}
-            >
-              Đăng nhập
-            </Button>
-          </Link>
+
+          {isAuthenticated ? (
+            <Avatar>{user.name.split(' ')[0]}</Avatar>
+          ) : (
+            <Link to='/login'>
+              <Button
+                type='primary'
+                style={{
+                  fontSize: '16px',
+                  height: 'auto',
+                  padding: '8px 12px',
+                  fontWeight: 700,
+                }}
+              >
+                Đăng nhập
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -4,28 +4,20 @@
       "name": "Minh Hieu Duong",
       "mail": "hieu.abc@gmail.com",
       "phone": "0989898989",
-      "userName": "hieu123",
-      "password": "123456"
+      "username": "hieu123",
+      "password": "123456",
+      "id": 1
     }
   ],
   "tours": [
     {
       "name": "Vé Safari",
       "description": "Vé Safari được cấp bởi công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đ",
-      "price": [
-        {
-          "type": "adult",
-          "price": "650000"
-        },
-        {
-          "type": "child",
-          "price": "490000"
-        },
-        {
-          "type": "old",
-          "price": "490000"
-        }
-      ],
+      "price": {
+        "adult": "650000",
+        "child": "490000",
+        "old": "490000"
+      },
       "image": "./src/img/tour/VESAFARI.jpg",
       "overview": [
         {
@@ -95,6 +87,46 @@
           "content": "9:00 - 21:30 hằng ngày"
         }
       ]
+    }
+  ],
+  "hotels": [
+    {
+      "hotelInfo": {
+        "name": "tên khách sạn",
+        "host": "anh Hiếu",
+        "phone": "0123456789",
+        "description": "mô tả",
+        "star": "2",
+        "city": "Thành phố Phú Quốc",
+        "street": "Minh Khai",
+        "homeNumber": "124"
+      },
+      "price": [
+        {
+          "name": "phòng 10",
+          "bedSingle": 4,
+          "bedDoule": 2,
+          "price": 200000,
+          "image": "https://cms.beebeetravel.vn/Upload/Hotel/637854645810164790_225548443.jpg"
+        },
+        {
+          "name": "phòng 2",
+          "bedSingle": 2,
+          "bedDoule": 3,
+          "price": 300000,
+          "image": "https://cms.beebeetravel.vn/Upload/Hotel/637854645810164790_225548443.jpg"
+        }
+      ],
+      "convenients": [
+        "1",
+        "3",
+        "5",
+        "7",
+        "9",
+        "12",
+        "15"
+      ],
+      "id": 1
     }
   ]
 }

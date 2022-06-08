@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
-import { Drawer, Button, Space, Form, Input, Checkbox } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Drawer, Form, Input, Space } from 'antd';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import './LoginForm.scss';
 
 const LoginBtn = () => {
   const [visible, setVisible] = useState(false);
+  const { loadUser, login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = loadUser();
+    if (user) navigate('/');
+  }, []);
 
   const showDrawer = () => {
     setVisible(true);
@@ -15,8 +23,12 @@ const LoginBtn = () => {
     setVisible(false);
   };
 
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+  const onFinish = async (values) => {
+    const user = await login(values);
+    if (user) {
+      setVisible(false);
+      navigate('/');
+    }
   };
 
   return (

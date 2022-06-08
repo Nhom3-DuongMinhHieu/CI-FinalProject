@@ -1,9 +1,6 @@
 import { Checkbox, Col, Row } from 'antd';
 import React from 'react';
 
-const onChange = (checkedValues) => {
-  console.log('checked = ', checkedValues);
-};
 const plainOptions = [
   { label: 'Wi-Fi miễn phí', value: '1' },
   { label: 'Xe đưa đón sân bay', value: '2' },
@@ -24,7 +21,11 @@ const plainOptions = [
   { label: 'Phòng không hút thuốc', value: '17' },
 ];
 
-const Convenient = () => {
+const Convenient = ({ convenients, setConvenients }) => {
+  const onChange = (checkedValues) => {
+    setConvenients(checkedValues);
+  };
+
   return (
     <div>
       <Row>
@@ -34,7 +35,7 @@ const Convenient = () => {
             <Checkbox.Group
               className='bacsic__info-item-checkbox'
               options={plainOptions}
-              defaultValue={['1']}
+              defaultValue={convenients}
               onChange={onChange}
             />
           </div>
