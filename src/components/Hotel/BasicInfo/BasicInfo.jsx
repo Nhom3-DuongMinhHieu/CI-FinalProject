@@ -59,6 +59,22 @@ const BasicInfo = () => {
                   <Option value='5'>5 sao</Option>
                 </Select>
               </Form.Item>
+
+              <Form.Item
+                label='Mô tả'
+                style={{
+                  width: '600px',
+                }}
+                name='hotel-description'
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please input description!',
+                  },
+                ]}
+              >
+                <Input size='large' placeholder='Nhập mô tả khách sạn' />
+              </Form.Item>
             </Form>
           </div>
 

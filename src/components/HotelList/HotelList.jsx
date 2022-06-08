@@ -41,9 +41,11 @@ const HotelList = () => {
                   <p>5250000/phòng/đêm.</p>
                 </div>
               </div>
-              <Button size='large' type='primary' className='order-btn'>
-                Đặt phòng
-              </Button>
+              <Link to='/booking-hotel'>
+                <Button size='large' type='primary' className='order-btn'>
+                  Đặt phòng
+                </Button>
+              </Link>
             </Link>
           </Col>
         </Row>

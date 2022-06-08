@@ -1,8 +1,8 @@
+import { Button } from 'antd';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 import logo from '../../img/logo/logo-black.png';
-import LoginBtn from '../LoginBtn/LoginBtn';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -18,28 +18,16 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='grid navbar-container'>
-        <LinkScroll
-          activeClass='active'
-          to='home'
-          spy={true}
-          smooth={true}
-          className='navbar__logo'
-        >
+        <Link to='/' className='navbar__logo'>
           <img className='navbar__logo-icon' src={logo} alt='logo' />
           <span className='navbar__logo-text'>VịtTravel</span>
-        </LinkScroll>
+        </Link>
 
         <div className='navbar__between'>
           <div className='navbar__between-list'>
-            <LinkScroll
-              activeClass='active'
-              to='home'
-              spy={true}
-              smooth={true}
-              className='navbar__between-item'
-            >
+            <Link to='/' className='navbar__between-item'>
               Trang chủ
-            </LinkScroll>
+            </Link>
 
             <LinkScroll
               to='tours'
@@ -74,7 +62,19 @@ const Navbar = () => {
           <Link to='/create-hotel' className='navbar__right-host'>
             Cho thuê phòng
           </Link>
-          <LoginBtn />
+          <Link to='/login'>
+            <Button
+              type='primary'
+              style={{
+                fontSize: '16px',
+                height: 'auto',
+                padding: '8px 12px',
+                fontWeight: 700,
+              }}
+            >
+              Đăng nhập
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
