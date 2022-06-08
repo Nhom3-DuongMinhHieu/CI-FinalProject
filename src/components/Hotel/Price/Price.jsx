@@ -4,19 +4,56 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Button, Col, Form, Input, InputNumber, Modal, Row } from 'antd';
 import React, { useState } from 'react';
 
-const Price = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+const initialValue = {
+  name: '',
+  bedSingle: 1,
+  bedDoule: 0,
+  price: '10000000',
+  image: '',
+};
 
+const Price = ({ price, setPrice }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [priceData, setPriceData] = useState(initialValue);
+  const [current, setCurrent] = useState(null);
+
+  window.scrollTo(0, 0);
   const showModal = () => {
     setIsModalVisible(true);
   };
 
+  const handleChange = (e) => {
+    setPriceData({
+      ...priceData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleOk = () => {
+    if (current != null) {
+      setPrice((prev) =>
+        prev.map((item, index) => (index === current ? priceData : item))
+      );
+    } else {
+      setPrice([...price, priceData]);
+    }
     setIsModalVisible(false);
+    setPriceData(initialValue);
+    setCurrent(null);
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
+  };
+
+  const handleUpdate = (index) => {
+    setPriceData(price[index]);
+    setCurrent(index);
+    setIsModalVisible(true);
+  };
+
+  const handleDelete = (index) => {
+    setPrice((prev) => prev.filter((item, i) => i !== index));
   };
 
   const onFinish = (values) => {
@@ -31,27 +68,36 @@ const Price = () => {
     <div>
       <Row>
         <Col span={18} className='info-left'>
-          <div className='info-item'>
-            <h3>Phòng Deluxe Giường Đôi/2 Giường Đơn Nhìn Ra Núi</h3>
-            <div className='bed-quantity'>
-              <h4>Số giường:</h4>
-              <h4>2 giường đôi + 2 giường đơn</h4>
+          {price.map((item, index) => (
+            <div key={index}>
+              <div className='info-item'>
+                <h3>{item.name}</h3>
+                <div className='bed-quantity'>
+                  <h4>Số giường:</h4>
+                  <h4>
+                    {item.bedDoule} giường đôi + {item.bedSingle} giường đơn
+                  </h4>
+                </div>
+                <div className='action-btn'>
+                  <Button
+                    style={{ marginBottom: '4px' }}
+                    icon={<EditIcon />}
+                    type='primary'
+                    ghost
+                    onClick={() => handleUpdate(index)}
+                  />
+                  <Button
+                    type='primary'
+                    danger
+                    icon={<DeleteForeverIcon />}
+                    ghost
+                    onClick={() => handleDelete(index)}
+                  />
+                </div>
+              </div>
             </div>
-            <div className='action-btn'>
-              <Button
-                style={{ marginBottom: '4px' }}
-                icon={<EditIcon />}
-                type='primary'
-                ghost
-              />
-              <Button
-                type='primary'
-                danger
-                icon={<DeleteForeverIcon />}
-                ghost
-              />
-            </div>
-          </div>
+          ))}
+
           <Button
             type='dashed'
             ghost
@@ -73,7 +119,7 @@ const Price = () => {
         </Col>
       </Row>
       <Modal
-        title='Thêm phòng'
+        title={current != null ? 'Cập nhật phòng' : 'Thêm phòng'}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
@@ -87,7 +133,6 @@ const Price = () => {
         >
           <Form.Item
             label='Tên phòng'
-            name='room-name'
             style={{
               width: '100%',
             }}
@@ -98,12 +143,16 @@ const Price = () => {
               },
             ]}
           >
-            <Input size='large' />
+            <Input
+              name='name'
+              value={priceData.name}
+              onChange={handleChange}
+              size='large'
+            />
           </Form.Item>
 
           <Form.Item
             label='Loại giường'
-            name='bed-type'
             rules={[
               {
                 required: true,
@@ -116,7 +165,14 @@ const Price = () => {
                 Giường đơn
               </Col>
               <Col span={12} style={{ marginBottom: '6px' }}>
-                <InputNumber min={0} max={4} defaultValue={1} />
+                <InputNumber
+                  min={0}
+                  max={4}
+                  defaultValue={1}
+                  name='bedSingle'
+                  value={priceData.bedSingle}
+                  onChange={(e) => setPriceData({ ...priceData, bedSingle: e })}
+                />
               </Col>
             </Row>
 
@@ -128,14 +184,20 @@ const Price = () => {
                 Giường đôi
               </Col>
               <Col span={12}>
-                <InputNumber min={0} max={4} defaultValue={0} />
+                <InputNumber
+                  min={0}
+                  max={4}
+                  defaultValue={0}
+                  value={priceData.bedDoule}
+                  name='bedDouble'
+                  onChange={(e) => setPriceData({ ...priceData, bedDoule: e })}
+                />
               </Col>
             </Row>
           </Form.Item>
 
           <Form.Item
             label='Giá phòng'
-            name='room-price'
             rules={[
               {
                 required: true,
@@ -145,14 +207,16 @@ const Price = () => {
           >
             <InputNumber
               addonAfter='VND/phòng/đêm'
-              defaultValue={100000000}
+              defaultValue={10000000}
+              name='price'
+              value={priceData.price}
+              onChange={(e) => setPriceData({ ...priceData, price: e })}
               size='large'
             />
           </Form.Item>
 
           <Form.Item
             label='Ảnh phòng'
-            name='room-photo'
             style={{
               width: '100%',
             }}
@@ -163,7 +227,12 @@ const Price = () => {
               },
             ]}
           >
-            <Input size='large' />
+            <Input
+              name='image'
+              value={priceData.image}
+              onChange={handleChange}
+              size='large'
+            />
           </Form.Item>
         </Form>
       </Modal>
