@@ -1,13 +1,26 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Card, Checkbox, Form, Input } from 'antd';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import './Login.scss';
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+  const { loadUser, login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = loadUser();
+    if (user) navigate('/');
+  }, []);
+
+  const onFinish = async (values) => {
+    const user = await login(values);
+    if (user) {
+      navigate('/');
+    }
   };
+
   return (
     <div className='site-card-border-less-wrapper'>
       <Card
