@@ -33,7 +33,10 @@ const GuestsCountModal = ({ setModalVisible, amount, setAmount }) => {
             </Col>
             <Col span={8}>{amount.adult}</Col>
             <Col span={8}>
-              <Button onClick={() => handleChange('adult', 1)}>
+              <Button
+                disabled={amount.adult === 20}
+                onClick={() => handleChange('adult', 1)}
+              >
                 <PlusOutlined />
               </Button>
             </Col>
@@ -55,7 +58,10 @@ const GuestsCountModal = ({ setModalVisible, amount, setAmount }) => {
             </Col>
             <Col span={8}>{amount.children}</Col>
             <Col span={8}>
-              <Button onClick={() => handleChange('children', 1)}>
+              <Button
+                disabled={amount.children === 10}
+                onClick={() => handleChange('children', 1)}
+              >
                 <PlusOutlined />
               </Button>
             </Col>
@@ -77,7 +83,10 @@ const GuestsCountModal = ({ setModalVisible, amount, setAmount }) => {
             </Col>
             <Col span={8}>{amount.room}</Col>
             <Col span={8}>
-              <Button onClick={() => handleChange('room', 1)}>
+              <Button
+                disabled={amount.room === 20}
+                onClick={() => handleChange('room', 1)}
+              >
                 <PlusOutlined />
               </Button>
             </Col>

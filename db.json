@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "name": "Minh Hieu Duong",
+      "mail": "hieu.abc@gmail.com",
+      "phone": "0989898989",
+      "userName": "hieu123",
+      "password": "123456"
+    }
+  ],
+  "tours": [
+    {
+      "name": "Vé Safari",
+      "description": "Vé Safari được cấp bởi công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đ",
+      "price": [
+        {
+          "type": "adult",
+          "price": "650000"
+        },
+        {
+          "type": "child",
+          "price": "490000"
+        },
+        {
+          "type": "old",
+          "price": "490000"
+        }
+      ],
+      "image": "./src/img/tour/VESAFARI.jpg",
+      "overview": [
+        {
+          "title": "Địa chỉ",
+          "content": "Khu Bãi Dài, xã Gành Dầu, Thành Phố Phú Quốc, tỉnh Kiên Giang."
+        },
+        {
+          "title": "Giờ mở cửa",
+          "content": "9:30 - 16:30 hằng ngày"
+        }
+      ]
+    },
+    {
+      "name": "Vé VinWonders",
+      "description": "Vé VinWonders được cấp bởi công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch c",
+      "price": [
+        {
+          "type": "adult",
+          "price": "650000"
+        },
+        {
+          "type": "child",
+          "price": "490000"
+        },
+        {
+          "type": "old",
+          "price": "490000"
+        }
+      ],
+      "image": "./src/img/tour/VEVINWONDERS.jpg",
+      "ovreview": [
+        {
+          "title": "Địa chỉ",
+          "content": "Khu Bãi Dài, xã Gành Dầu, Thành Phố Phú Quốc, tỉnh Kiên Giang."
+        },
+        {
+          "title": "Giờ mở cửa",
+          "content": "9:00 - 21:30 hằng ngày"
+        }
+      ]
+    },
+    {
+      "name": "Combo VinWonders và Safari",
+      "description": "Combo VinWonders và Safari được cấp bởi công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lịch của công ty cổ phần đầu tư và phân phối vé đi du lị",
+      "price": [
+        {
+          "type": "adult",
+          "price": "1200000"
+        },
+        {
+          "type": "child",
+          "price": "920000"
+        },
+        {
+          "type": "old",
+          "price": "920000"
+        }
+      ],
+      "image": "./src/img/tour/COMBOVIN.png",
+      "ovreview": [
+        {
+          "title": "Địa chỉ",
+          "content": "Khu Bãi Dài, xã Gành Dầu, Thành Phố Phú Quốc, tỉnh Kiên Giang."
+        },
+        {
+          "title": "Giờ mở cửa",
+          "content": "9:00 - 21:30 hằng ngày"
+        }
+      ]
+    }
+  ]
+}

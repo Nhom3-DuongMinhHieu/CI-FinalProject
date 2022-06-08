@@ -1,0 +1,52 @@
+.tickets {
+  padding-top: 90px;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(24, 144, 255);
+  }
+  .ticket-item {
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    &:hover {
+      box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    }
+    .ticket-item__img {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+    .ticket-item__link {
+      cursor: default;
+    }
+    .ticket-item__text {
+      text-align: justify;
+      padding: 20px;
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .ticket-item__overview {
+        display: flex;
+        p {
+          margin-left: 8px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: rgb(190, 190, 190);
+          overflow: hidden;
+          font-weight: 400;
+        }
+      }
+    }
+    .order-btn {
+      margin-bottom: 20px;
+    }
+  }
+}

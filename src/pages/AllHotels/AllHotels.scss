@@ -1,0 +1,132 @@
+.all-hotels__wrapper {
+  margin: 100px 0;
+}
+
+.all-hotels__sidebar {
+  text-align: justify;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  .sidebar-title {
+    padding: 16px;
+    border-bottom: 1px solid #bdbdbd;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .sidebar-item {
+    padding: 16px;
+    border-bottom: 1px solid #bdbdbd;
+    &:last-child {
+      border-bottom: none;
+    }
+    .sidebar-item__title {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h5 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      h6 {
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.all-hotels__content {
+  padding-left: 24px;
+  .content-item {
+    padding: 16px;
+    height: 232px;
+    border: 1px solid #c6c6c6;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    .content-left {
+      display: flex;
+      text-align: justify;
+    }
+    .content-left__img {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      margin-right: 20px;
+      border-radius: 4px;
+      img {
+        height: 100%;
+      }
+    }
+    .content-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+.content-item__title {
+  display: flex;
+  align-items: center;
+  h4 {
+    margin: 4px 12px 0 0;
+    color: rgb(26, 145, 255);
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.content-right__price {
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 14px;
+    color: #6b6b6b;
+    font-weight: 400;
+  }
+}
+
+.content-item__description {
+  width: 440px;
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  padding-right: 30px;
+}
+
+.content-item__address {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.content-left__info {
+  overflow-y: auto;
+  height: 100%;
+  overflow-x: hidden;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

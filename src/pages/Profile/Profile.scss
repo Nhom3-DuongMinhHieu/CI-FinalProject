@@ -1,0 +1,24 @@
+.profile {
+  text-align: justify;
+  margin: 100px 0;
+  h2 {
+    font-weight: 700;
+    font-size: 40px;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 20px;
+    color: #6b6b6b;
+    margin-bottom: 40px;
+  }
+  .profile-item {
+    padding: 20px;
+    border-top: 1px solid #e6e6e6;
+    font-size: 16px;
+    .edit-profile {
+      text-align: right;
+      color: rgb(24, 144, 255);
+      font-weight: 500;
+    }
+  }
+}

@@ -1,5 +1,8 @@
+import { BackTop } from 'antd';
 import React from 'react';
 import Header from '../../components/Header/Header';
+import HotelList from '../../components/HotelList/HotelList';
+import TourList from '../../components/TourList/TourList';
 import './HomePage.scss';
 
 const HomePage = () => {
@@ -58,6 +61,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <TourList />
+      <HotelList />
+      <BackTop duration={800} />
     </>
   );
 };

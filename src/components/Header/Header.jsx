@@ -5,7 +5,7 @@ import SearchInput from '../SearchInput/SearchInput';
 
 const Header = () => {
   return (
-    <div className='header'>
+    <div id='home' className='header'>
       <div className='header__wave-top'></div>
       <div className='header__wave-bottom'></div>
       <Navbar />

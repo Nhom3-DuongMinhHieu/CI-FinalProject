@@ -57,7 +57,7 @@ const SearchInput = () => {
         <Option className='header__search-option' value='tom'>
           Hai giường đôi
         </Option>
-        <Option className='header__search-option' value='tom'>
+        <Option className='header__search-option' value='atom'>
           Hai giường đơn
         </Option>
       </Select>
