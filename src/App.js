@@ -27,9 +27,9 @@ const App = () => {
   return (
     <div className='App'>
       <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/all-hotels' element={<AllHotels />} />
         <Route element={<RequireAuth />}>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/all-hotels' element={<AllHotels />} />
           <Route path='/create-hotel' element={<CreateHotel />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/booking-hotel' element={<BookingHotel />} />
